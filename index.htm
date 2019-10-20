@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script type="text/jscript" src="{dede:global.cfg_templets_skin/}/js/jquery-1.6.2.min.js" ></script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div class="show">
+
+<!--banner start-->
+<div class="lunhuan">
+    <div class="lunhuanback">
+        <p style="opacity: 1;filter:alpha(opacity=100);"></p>
+        <p></p>
+    </div>
+    <div class="lunhuan_main">
+        <div class="lunhuancenter">
+            <a href="javascript:void(0)" class="centergif"></a>
+            <b class="slideUp" style="background-image:url({dede:global.cfg_templets_skin/}/images/lunhuan.png); background-repeat:no-repeat;opacity:1;filter:alpha(opacity=100); top:-10px;"></b>
+            <b class="slideUp" style="background-image:url({dede:global.cfg_templets_skin/}/images/lunhuan2.png); background-repeat:no-repeat;"></b>
+            <ul class="lunbonum">
+                <li class="lunboone"></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="text-align:center;clear:both">
+</div>
+<!--banner end-->
+
+<!--banner js start-->
+<script type="text/javascript">
+$(document).ready(function(){
+    var ali=$('.lunbonum li');
+    var aPage=$('.lunhuanback p');
+    var aslide_img=$('.lunhuancenter b');
+    var iNow=0;
+    ali.each(function(index){
+        $(this).mouseover(function(){
+            slide(index);
+        })
+    });
+    function slide(index){
+        iNow=index;
+        ali.eq(index).addClass('lunboone').siblings().removeClass();
+		aPage.eq(index).siblings().stop().animate({opacity:0},600);
+		aPage.eq(index).stop().animate({opacity:1},600);
+        aslide_img.eq(index).stop().animate({opacity:1,top:-10},600).siblings('b').stop().animate({opacity:0,top:-40},600);
+    }
+	function autoRun(){
+        iNow++;
+		if(iNow==ali.length){
+			iNow=0;
+		}
+		slide(iNow);
+	}
+	var timer=setInterval(autoRun,4000);
+    ali.hover(function(){
+		clearInterval(timer);
+	},function(){
+		timer=setInterval(autoRun,4000);
+    });
+})
+</script>
+<!--banner js end-->
+
+
+</div>
+
+<div class="fuwu">
+
+
+<div class="con">
+<p class="img"><img src="{dede:global.cfg_templets_skin/}/images/c1.png" /></p>
+<p class="title"><a href="#">互联网服务介绍</a></p>
+<p class="content">随着互联网在全球范围内的扩展,中国互联网快速发展,中国ISP的数量不断增加,提供的业务也不断丰富。然而要实现..</p>
+<p class="more"><a href="#">— 了解更多 —</a></p>
+</div>
+
+<div class="con">
+<p class="img"><img src="{dede:global.cfg_templets_skin/}/images/c2.png" /></p>
+<p class="title"><a href="#">我们的团队</a></p>
+<p class="content">我们是一个崭新的团队，我们专注于WEB前端设计，如果您对这方面感兴趣或者想加入我们一起创业，那么就联系我们吧...</p>
+<p class="more"><a href="#">— 了解更多 —</a></p>
+</div>
+
+<div class="con">
+<p class="img"><img src="{dede:global.cfg_templets_skin/}/images/c3.png" /></p>
+<p class="title"><a href="#">功能定制/二次开发</a></p>
+<p class="content">现如今开发一套程序需要很大的人力物力投入，所以许多朋友会选择购买一套商业源码，然后对其进行二次开发...</p>
+<p class="more"><a href="#">— 了解更多 —</a></p>
+</div>
+
+<div class="con">
+<p class="img"><img src="{dede:global.cfg_templets_skin/}/images/c4.png" /></p>
+<p class="title"><a href="#">WEB前端设计</a></p>
+<p class="content">好的作品就好像一件名贵的衣服，如果您需要对您的网站以及其他相关产品进行美化，请与我们取得联系，我们将竭诚为您服务...</p>
+<p class="more"><a href="#">— 了解更多 —</a></p>
+</div>
+
+</div>
+
+
+<div class="guanggao">—— 案例展示 ——</div>
+
+<div class="liebiao">
+
+{dede:arclist row="4" typeid="2" infolen="152" orderby="pubdate"}
+<div class="con">
+<p class="img"><a href="[field:arcurl /]"><img src="[field:litpic /]" width="267" height="180" /></a></p>
+<p class="content">[field:info /]</p>
+<p class="more"><a href="[field:arcurl /]">— 查看详情 —</a></p>
+</div>
+{/dede:arclist}
+
+</div>
+
+
+
+
+<div class="guanggao">—— 合作伙伴 ——</div>
+<div class="guanggao2"></div>
+
+
+<div class="hezuo">
+		<div class="hezuos">
+
+	<ul>
+    {dede:flink row='12' type='image' titlelen="24" typeid="0"}
+	<li>[field:link /]</li>
+    {/dede:flink}
+	</ul>
+		</div>
+</div>
+
+<!--footer-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>
