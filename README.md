@@ -37,6 +37,20 @@ TIPS: the memory time for the long random number and the short random number is 
 
 ## Welcome you to participate in the WISC (Campus Level)!
 
+## What's New?
+# The Results of the 2019 WISC (Campus Level)
+
+1. Yeyuan Chen, 621
+2. Tingyu Yang, 613
+3. Bingqian Yang, 608
+4. Ziyi Wang, 603
+5. Yixin Chen, 593
+6. Nianfeng Li, 586
+7. Binghong Jiang, 560
+8. Neng liu, 557
+9. Yifan Liu, 536
+10. Hao Qin, 519
+11. Yitong Yao, 511
 
 <div style='display: none'>
 You can use the [editor on GitHub](https://github.com/WISC/WISC.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
